@@ -951,6 +951,283 @@
   }
   .form-footer .btn { flex: 1; }
 
+  /* ---------- Product Browser (SH / LF / Alicat) ---------- */
+  .pb-hero {
+    background: linear-gradient(180deg, var(--navy-50) 0%, rgba(238, 242, 248, 0.4) 100%);
+    padding: 28px 30px 24px;
+    margin: -24px -24px 24px;
+    border-bottom: 1px solid var(--line);
+  }
+  .pb-hero-sub {
+    font-size: 0.7rem;
+    color: var(--navy-700);
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .pb-hero-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--navy-900);
+    margin-bottom: 6px;
+    line-height: 1.25;
+  }
+  .pb-hero-desc {
+    font-size: 0.86rem;
+    color: var(--ink-soft);
+    line-height: 1.6;
+    margin-bottom: 18px;
+    word-break: keep-all;
+  }
+  .pb-search {
+    position: relative;
+    margin-bottom: 14px;
+  }
+  .pb-search > svg {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    color: var(--navy-700);
+    opacity: 0.7;
+  }
+  .pb-search input {
+    width: 100%;
+    height: 52px;
+    padding: 0 44px 0 48px;
+    font-family: inherit;
+    font-size: 0.98rem;
+    color: var(--navy-900);
+    background: white;
+    border: 2px solid var(--navy-100);
+    border-radius: var(--radius-md);
+    outline: none;
+    transition: all 0.18s;
+    letter-spacing: -0.005em;
+  }
+  .pb-search input::placeholder { color: var(--muted); font-size: 0.92rem; }
+  .pb-search input:focus {
+    border-color: var(--navy-600);
+    box-shadow: 0 0 0 3px rgba(58, 108, 176, 0.12);
+  }
+  .pb-search-clear {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--navy-100);
+    color: var(--navy-700);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .pb-search-clear:hover { background: var(--navy-200, #c8d2e2); color: var(--navy-900); }
+
+  .pb-chips {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .pb-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 14px;
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--ink-soft);
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    cursor: pointer;
+    transition: all 0.15s;
+    white-space: nowrap;
+  }
+  .pb-chip:hover { border-color: var(--navy-600); color: var(--navy-800); }
+  .pb-chip.active {
+    background: var(--navy-800);
+    color: white;
+    border-color: var(--navy-800);
+  }
+  .pb-chip-count {
+    font-size: 0.68rem;
+    padding: 1px 6px;
+    background: rgba(0,0,0,0.08);
+    border-radius: 10px;
+    font-weight: 600;
+  }
+  .pb-chip.active .pb-chip-count {
+    background: rgba(255,255,255,0.18);
+    color: white;
+  }
+  .pb-result-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+    padding: 0 2px;
+  }
+  .pb-result-count {
+    font-size: 0.82rem;
+    color: var(--navy-700);
+    font-weight: 600;
+  }
+  .pb-result-hint {
+    font-size: 0.74rem;
+    color: var(--muted);
+  }
+
+  .pb-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-bottom: 24px;
+  }
+  .pb-card {
+    position: relative;
+    padding: 18px 18px 14px;
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .pb-card:hover {
+    border-color: var(--navy-600);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+  .pb-card-head { margin-bottom: 10px; }
+  .pb-card-cat {
+    display: inline-block;
+    font-size: 0.64rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--navy-700);
+    background: var(--navy-50);
+    padding: 3px 8px;
+    border-radius: 3px;
+    margin-bottom: 8px;
+  }
+  .pb-card-model {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--navy-900);
+    letter-spacing: -0.01em;
+    margin-bottom: 2px;
+    font-variant-numeric: tabular-nums;
+  }
+  .pb-card-name {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--navy-800);
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+  }
+  .pb-card-desc {
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+    line-height: 1.55;
+    margin-bottom: 12px;
+    flex: 1;
+    word-break: keep-all;
+  }
+  .pb-card-specs {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    padding: 10px 0;
+    border-top: 1px dashed var(--line);
+    border-bottom: 1px dashed var(--line);
+    margin-bottom: 10px;
+  }
+  .pb-card-spec-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    font-size: 0.72rem;
+  }
+  .pb-card-spec-row span:first-child { color: var(--muted); }
+  .pb-card-spec-row span:last-child {
+    color: var(--navy-900);
+    font-weight: 500;
+    letter-spacing: -0.005em;
+    text-align: right;
+  }
+  .pb-card-kws {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+  }
+  .pb-card-kw {
+    font-size: 0.66rem;
+    color: var(--muted);
+    padding: 2px 7px;
+    background: #f5f7fa;
+    border-radius: 3px;
+    letter-spacing: -0.005em;
+  }
+  .pb-card-cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 8px;
+    border-top: 1px solid var(--line);
+    font-size: 0.76rem;
+    font-weight: 600;
+    color: var(--navy-700);
+    transition: color 0.15s;
+  }
+  .pb-card-cta svg { width: 14px; height: 14px; }
+  .pb-card:hover .pb-card-cta { color: var(--navy-900); }
+
+  .pb-empty {
+    text-align: center;
+    padding: 60px 24px;
+    color: var(--muted);
+  }
+  .pb-empty-icon { font-size: 2.5rem; margin-bottom: 14px; opacity: 0.5; }
+  .pb-empty-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--navy-900);
+    margin-bottom: 6px;
+  }
+  .pb-empty-desc {
+    font-size: 0.85rem;
+    line-height: 1.55;
+    margin-bottom: 18px;
+    max-width: 420px;
+    margin-left: auto;
+    margin-right: auto;
+    word-break: keep-all;
+  }
+
+  @media (max-width: 900px) {
+    .pb-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 560px) {
+    .pb-grid { grid-template-columns: 1fr; }
+    .pb-hero { padding: 22px 20px 20px; margin: -18px -18px 18px; }
+    .pb-hero-title { font-size: 1.15rem; }
+    .pb-search input { height: 46px; font-size: 0.9rem; }
+    .pb-result-hint { display: none; }
+  }
+
   /* ---------- Duwon Special Section (two-step modal) ---------- */
   .duwon-products-grid {
     display: grid;
@@ -1356,61 +1633,6 @@
   </div>
 </section>
 
-<!-- ============ Featured Product ============ -->
-<section class="featured" id="featured">
-  <div class="container featured-inner">
-    <div class="featured-visual">
-      <div class="featured-tag-top">DUWON SCIENCE · FLAGSHIP</div>
-      <img id="featuredImg" alt="AI-LHFZ 3000 · CO₂ 레이저 단결정 육성 시스템" />
-      <div class="featured-tag-temp">
-        <span class="featured-tag-temp-dot"></span>
-        MELT · 2850 °C
-      </div>
-    </div>
-    <div class="featured-content">
-      <div class="featured-eyebrow">
-        Featured Product
-        <span class="flagship">FLAGSHIP</span>
-      </div>
-      <h2 class="featured-title">AI-LHFZ 3000</h2>
-      <div class="featured-subtitle">CO₂ Laser-Heated Floating Zone Furnace</div>
-      <p class="featured-desc">
-        두원과학이 자체 개발한 <strong>플래그십 결정성장장비</strong>입니다.
-        고출력 CO₂ 레이저로 최대 3,000 °C의 극고온 환경을 구현하고,
-        AI 실시간 용융대 제어로 숙련도와 무관하게 <strong>일관된 단결정 성장</strong>을 실현합니다.
-      </p>
-      <div class="featured-kpis">
-        <div class="featured-kpi">
-          <div class="featured-kpi-val">3,000 °C</div>
-          <div class="featured-kpi-lab">Max Temp</div>
-        </div>
-        <div class="featured-kpi">
-          <div class="featured-kpi-val">4-Axis</div>
-          <div class="featured-kpi-lab">Precision</div>
-        </div>
-        <div class="featured-kpi">
-          <div class="featured-kpi-val">AI</div>
-          <div class="featured-kpi-lab">Real-Time</div>
-        </div>
-        <div class="featured-kpi">
-          <div class="featured-kpi-val">CF</div>
-          <div class="featured-kpi-lab">Crucible-Free</div>
-        </div>
-      </div>
-      <div class="featured-ctas">
-        <a class="featured-btn featured-btn-primary" href="ai-lhfz-3000.html">
-          자세히 보기
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-        </a>
-        <button class="featured-btn featured-btn-outline" id="featuredDownload">
-          카탈로그 다운로드
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v14m0 0l-5-5m5 5l5-5M5 21h14"/></svg>
-        </button>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ============ Manufacturers ============ -->
 <section class="manufacturers" id="manufacturers">
   <div class="container">
@@ -1542,6 +1764,61 @@
 </section>
 
 <!-- ============ Footer ============ -->
+<!-- ============ Featured Product ============ -->
+<section class="featured" id="featured">
+  <div class="container featured-inner">
+    <div class="featured-visual">
+      <div class="featured-tag-top">DUWON SCIENCE · FLAGSHIP</div>
+      <img id="featuredImg" alt="AI-LHFZ 3000 · CO₂ 레이저 단결정 육성 시스템" />
+      <div class="featured-tag-temp">
+        <span class="featured-tag-temp-dot"></span>
+        MELT · 2850 °C
+      </div>
+    </div>
+    <div class="featured-content">
+      <div class="featured-eyebrow">
+        Featured Product
+        <span class="flagship">FLAGSHIP</span>
+      </div>
+      <h2 class="featured-title">AI-LHFZ 3000</h2>
+      <div class="featured-subtitle">CO₂ Laser-Heated Floating Zone Furnace</div>
+      <p class="featured-desc">
+        두원과학이 자체 개발한 <strong>플래그십 결정성장장비</strong>입니다.
+        고출력 CO₂ 레이저로 최대 3,000 °C의 극고온 환경을 구현하고,
+        AI 실시간 용융대 제어로 숙련도와 무관하게 <strong>일관된 단결정 성장</strong>을 실현합니다.
+      </p>
+      <div class="featured-kpis">
+        <div class="featured-kpi">
+          <div class="featured-kpi-val">3,000 °C</div>
+          <div class="featured-kpi-lab">Max Temp</div>
+        </div>
+        <div class="featured-kpi">
+          <div class="featured-kpi-val">4-Axis</div>
+          <div class="featured-kpi-lab">Precision</div>
+        </div>
+        <div class="featured-kpi">
+          <div class="featured-kpi-val">AI</div>
+          <div class="featured-kpi-lab">Real-Time</div>
+        </div>
+        <div class="featured-kpi">
+          <div class="featured-kpi-val">CF</div>
+          <div class="featured-kpi-lab">Crucible-Free</div>
+        </div>
+      </div>
+      <div class="featured-ctas">
+        <a class="featured-btn featured-btn-primary" href="ai-lhfz-3000.html">
+          자세히 보기
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+        <button class="featured-btn featured-btn-outline" id="featuredDownload">
+          카탈로그 다운로드
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v14m0 0l-5-5m5 5l5-5M5 21h14"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
 <footer class="site-footer" id="contact">
   <div class="container">
     <div class="footer-inner">
@@ -1718,6 +1995,81 @@
     }
   };
 
+  const MFR_PRODUCTS = {
+    sh: [
+      { model: 'SH-VDO-30NG', name: '진공건조기 30L (250°C)', cat: 'Vacuum Oven', desc: '실험실용 진공 건조/탈가스 처리. Ambient+5~250°C, 27L 챔버, 진공 내성 0~0.1MPa.', keywords: ['진공', '건조기', '250', '27L', '탈가스', 'vacuum', 'oven', 'small'], specs: [['온도', 'Ambient+5 ~ 250°C'], ['용량', '27 L (300×300×300mm)'], ['외형', '605×550×770mm'], ['진공도', '0 ~ 0.1 MPa'], ['소재', 'SUS 내부 챔버']] },
+      { model: 'SH-VDO-125NS', name: '고온 진공건조기 125L (400°C)', cat: 'Vacuum Oven', desc: '400°C급 고온 진공 건조. 대용량 125L 챔버 + 자켓형 히팅.', keywords: ['진공', '고온', '400', '건조기', '125L', 'vacuum'], specs: [['온도', 'Ambient+5 ~ 400°C'], ['용량', '125 L (500×500×500mm)'], ['진공도', '0 ~ 0.1 MPa'], ['히팅', '자켓형 PID']] },
+      { model: 'VDO-PK-G1', name: '진공건조기 패키지 30L (콜드트랩+펌프)', cat: 'Vacuum Oven', desc: '진공건조기 + 콜드트랩 + 진공펌프 + 오일미스트트랩 일체형 프레임.', keywords: ['진공', '패키지', '건조기', 'cold', 'trap', 'pump', '콜드트랩'], specs: [['구성', 'SH-VDO-30NG + Cold Trap + V10 Pump + VOT-1020'], ['외형', '953×620×1552mm'], ['용도', '유기용매/수분 제거']] },
+      { model: 'SH-VDO-CBD1560', name: '대형 진공 건조기 (Walk-in)', cat: 'Vacuum Oven', desc: '식품/대형부품용 대형 진공 오븐. Ambient+5~150°C.', keywords: ['대형', '진공', 'walk-in', '식품', '산업용'], specs: [['온도', 'Ambient+5 ~ 150°C'], ['진공', '0 ~ 76 cmHg'], ['컨트롤', 'PID Membrane']] },
+      { model: 'SH-DO-150FG', name: '열풍순환 건조기 150L (250°C)', cat: 'Drying Oven', desc: '강제대류형 열풍 건조기. 시료 건조/경화 공정.', keywords: ['건조기', '열풍', 'drying', 'oven', '순환'], specs: [['온도', 'Ambient+10 ~ 250°C'], ['용량', '150 L'], ['순환', '강제대류 FAN'], ['컨트롤', 'PID + Timer']] },
+      { model: 'SH-IDO-52NS', name: '산업용 고온 건조기 52L (400°C)', cat: 'Industrial Oven', desc: '400°C 고온용 산업 건조기. 내열 SUS 챔버.', keywords: ['산업', '고온', '400', 'industrial', '건조기'], specs: [['온도', 'Ambient+5 ~ 400°C'], ['용량', '52 L'], ['소재', '내열 SUS316']] },
+      { model: 'SH-FU-125MG', name: '박스형 머플로 125L (1200°C)', cat: 'Furnace', desc: '1200°C급 박스형 고온 머플 전기로. 세라믹 발열체.', keywords: ['furnace', '머플', '박스', '1200', '고온', '전기로'], specs: [['최고온도', '1200°C'], ['용량', '125 L'], ['발열체', 'SiC 세라믹'], ['승온율', '≤ 10°C/min']] },
+      { model: 'SH-FU-18.7MSV', name: '진공 머플로 18.7L (1900°C)', cat: 'Furnace', desc: '1900°C 초고온 진공 분위기 머플로. MoSi2 발열체.', keywords: ['진공', '머플', '1900', '초고온', 'vacuum', 'furnace'], specs: [['최고온도', '1900°C'], ['용량', '18.7 L'], ['발열체', 'MoSi2'], ['진공도', '< 5×10⁻³ Torr']] },
+      { model: 'SH-FU-1200TG', name: '튜브 전기로 (1200°C)', cat: 'Furnace', desc: '석영 튜브 전기로. 분위기 가스 주입 가능.', keywords: ['튜브', '전기로', 'tube', 'furnace', '1200', 'CVD'], specs: [['최고온도', '1200°C'], ['튜브 내경', '60~120 mm'], ['가스', 'Ar/N₂/H₂'], ['용도', 'CVD / 어닐링']] },
+      { model: 'SH-FU-10MGVQ', name: '석영 진공 머플로 10L (1200°C)', cat: 'Furnace', desc: '석영 챔버 + 진공 분위기. 반응성 가스 공정 대응.', keywords: ['석영', '진공', '머플', '1200', 'quartz'], specs: [['최고온도', '1200°C'], ['챔버', '석영 10L'], ['진공', '< 5×10⁻³ Torr']] },
+      { model: 'MFC (Alicat MC 대체)', name: '가스질량유량계 (Multi-gas)', cat: 'Gas Control', desc: '98종 가스 선택 + RS-232 통신. CVD/스퍼터링 공정용.', keywords: ['MFC', '질량유량계', 'gas', 'flow', 'multi-gas', 'alicat'], specs: [['유량', '0~1 / 0~5 SLPM'], ['정확도', '±0.6% of reading'], ['응답', '< 10 ms'], ['통신', 'RS-232']] },
+      { model: 'SH-MX-3DR', name: '3D 믹서/쉐이커', cat: 'Mixer', desc: '3차원 공전 회전 믹서. 시료 균질화.', keywords: ['mixer', 'shaker', '믹서', '3D', '균질화'], specs: [['회전수', '30~80 rpm'], ['용량', 'max 2 kg']] },
+      { model: 'SH-PM-200', name: '행성형 볼밀 (Planetary Ball Mill)', cat: 'Mixer', desc: '고에너지 나노 분쇄용 행성형 볼밀.', keywords: ['ball', 'mill', '볼밀', '나노', '분쇄', 'planetary'], specs: [['회전속도', 'max 800 rpm'], ['지르코니아 볼', '3~20 mm'], ['용기', 'SUS/Agate/ZrO₂ 4개']] },
+      { model: 'SH-AC-50V', name: '수직형 살균기 50L (Autoclave)', cat: 'Autoclave', desc: '배지/기구 살균용 수직형 오토클레이브.', keywords: ['autoclave', '살균', 'sterilization', '50L', '수직'], specs: [['온도', '105~135°C'], ['용량', '50 L'], ['압력', '0.23 MPa']] }
+    ],
+    lf: [
+      { model: 'BQ80S', name: 'BQ80S Speed Variable Peristaltic Pump (Micro)', cat: 'Peristaltic · Basic', desc: '소형 분주용 페리스탈틱 펌프. 0.0035~34 mL/min. 중화반응, 수처리 샘플링용.', keywords: ['peristaltic', 'micro', 'dispensing', 'BQ80', '소형', '페리스탈틱'], specs: [['Flow', '0.0035 ~ 34 mL/min'], ['Speed', '0.1 ~ 80 rpm'], ['Accuracy', '≤ ±0.5%'], ['채널', '1 or 3'], ['치수', '152×112×107 mm'], ['무게', '1 kg']] },
+      { model: 'BT103S', name: 'BT103S Speed Variable Peristaltic Pump', cat: 'Peristaltic · Basic', desc: '재료 이송 및 제조, TFF/DFF 한외여과, 유동층, 첨가제 공정용.', keywords: ['peristaltic', 'BT103', 'TFF', '한외여과', '페리스탈틱'], specs: [['Flow', '0.00011 ~ 500 mL/min'], ['Speed', '0.1 ~ 100 rpm'], ['Accuracy', '≤ ±0.2%'], ['통신', 'RS485 · MODBUS']] },
+      { model: 'BT100S', name: 'BT100S Speed Variable Intelligent Pump', cat: 'Peristaltic · Intelligent', desc: '합성 반응, 액체 공급, TFF 한외여과, 발효 장비 서포트. 가장 널리 쓰이는 실험실 모델.', keywords: ['peristaltic', 'BT100', 'intelligent', 'fermentation', 'TFF', '발효', '페리스탈틱'], specs: [['Flow', '0.00011 ~ 750 mL/min'], ['Speed', '0.1 ~ 150 rpm'], ['통신', 'RS485 + WiFi(옵션)'], ['무게', '3.5 kg']] },
+      { model: 'BT300S', name: 'BT300S Speed Variable Intelligent Pump', cat: 'Peristaltic · Intelligent', desc: '중용량 버전. 도포, 과립화, 크로마토그래피 공급.', keywords: ['peristaltic', 'BT300', 'chromatography', '크로마토'], specs: [['Flow', '0.005 ~ 1,750 mL/min'], ['Speed', '0.1 ~ 350 rpm'], ['무게', '4.3 kg']] },
+      { model: 'BT600S', name: 'BT600S Speed Variable Intelligent Pump', cat: 'Peristaltic · Intelligent', desc: '대용량 모델. 충진기 서포트, 도포 공정.', keywords: ['peristaltic', 'BT600', 'high-flow', '대용량'], specs: [['Flow', '0.005 ~ 3,000 mL/min'], ['Speed', '0.1 ~ 600 rpm']] },
+      { model: 'WT300S', name: 'WT300S Large Torque Variable Pump', cat: 'Peristaltic · High-Torque', desc: '고토크 대유량 모델. 다채널 이송에 특화.', keywords: ['peristaltic', 'high-torque', '대토크', '다채널', 'WT300'], specs: [['Flow', '0.004 ~ 4,200 mL/min'], ['Speed', '0.1 ~ 350 rpm'], ['무게', '5.9 kg']] },
+      { model: 'BT100L', name: 'BT100L Intelligent Flow Pump (Touch)', cat: 'Peristaltic · Flow', desc: '4.3인치 터치스크린. 정량 연속 이송 + 간단한 분주. WiFi 원격 제어.', keywords: ['intelligent', 'touch', 'BT100L', 'WiFi', '터치', '페리스탈틱'], specs: [['Flow', '0.00011 ~ 750 mL/min'], ['통신', 'RS485 + WiFi'], ['디스플레이', '4.3" color LCD touch']] },
+      { model: 'BT100F', name: 'BT100F Intelligent Dispensing Pump', cat: 'Peristaltic · Dispensing', desc: '정량/시간/카피/연속 4가지 분주 모드. 매개변수 5그룹 저장.', keywords: ['dispensing', '분주', 'BT100F', 'volume', 'time', 'cell culture'], specs: [['Flow', '0.00016 ~ 750 mL/min'], ['분주 정확도', '50 µL~9,999 L'], ['모드', 'Flow / Volume / Time / Copy']] },
+      { model: 'BT100F-1', name: 'BT100F-1 Multi-channel Dispensing Pump', cat: 'Peristaltic · Dispensing', desc: '다채널(8~24ch) 고속 분주. 시약 분주/셀 배양 병행 처리.', keywords: ['multi-channel', 'dispensing', '다채널', 'BT100F-1', 'cell'], specs: [['Flow', '0.00011 ~ 1,650 mL/min'], ['채널', '8/12/16/24'], ['무게', '5.2 kg']] },
+      { model: 'WG600S', name: 'WG600S Industrial Peristaltic Pump', cat: 'Peristaltic · Industrial', desc: '산업용 고유량 페리스탈틱. 13.2 L/min까지. 의약/광업/석유화학.', keywords: ['industrial', '산업', '고유량', 'WG600', 'mining', 'biopharm'], specs: [['Flow', '0.4 ~ 13.2 L/min'], ['Speed', '30~600 rpm'], ['Power', '<300 W'], ['IP', 'IP31']] },
+      { model: 'JP300S', name: 'JP300S Batch Transfer Pump', cat: 'Peristaltic · Transfer', desc: '대량 이송용. 33 L/min. 알루미늄 합금 바디.', keywords: ['batch', 'transfer', '대량', 'JP300', '바이오촉매'], specs: [['Flow', '0.64 ~ 33 L/min (single)'], ['롤러', '4'], ['전원', 'AC 220V/380V']] },
+      { model: 'BT600P', name: 'BT600P Programming Peristaltic Pump', cat: 'Peristaltic · Programming', desc: '터치 프로그래밍. 경사 실험, 의약 연구용.', keywords: ['programming', 'gradient', 'BT600P', '프로그래밍', '의약'], specs: [['Flow', '0.006 ~ 2,900 mL/min'], ['디스플레이', 'IPS LCD Touch'], ['용도', 'Gradient / Pharma']] },
+      { model: 'BX600S', name: 'BX600S Handheld Peristaltic Pump', cat: 'Peristaltic · Handheld', desc: '리튬배터리 핸드헬드. 현장 샘플링/긴급 이송.', keywords: ['handheld', 'portable', '핸드헬드', '휴대', 'BX600S', '샘플링'], specs: [['Flow', '1.5 ~ 3,700 mL/min'], ['Power', 'DC 10.8V Li-ion'], ['무게', '1.05 kg']] },
+      { model: 'DS600', name: 'DS600 Peristaltic Filling System', cat: 'Filling System', desc: '3~5채널 자동 필링 시스템. 최대 32채널 cascade.', keywords: ['filling', '충진', 'DS600', '자동', '오라', '동결건조', 'vial'], specs: [['Filling', '0.01 ~ 9,999.99 mL'], ['채널', '3/4/5 (up to 32 cascade)'], ['디스플레이', '7" HD touch'], ['IP', 'IP31']] },
+      { model: 'HSP3000', name: 'HSP3000 Milliliter Peristaltic Pump', cat: 'Filling System', desc: '25~3000 µL 마이크로 디스펜싱. 자기비드/글리세롤 필링 특화.', keywords: ['microliter', '마이크로', 'HSP', 'bead', 'glycerol', 'magnetic'], specs: [['Filling', '25 µL ~ 3,000 µL'], ['Accuracy', '±2%'], ['채널', '1 (up to 16 cascade)']] },
+      { model: 'WSP3000', name: 'WSP3000 Microliter Peristaltic Pump', cat: 'Filling System', desc: '1~3000 µL 초정밀 마이크로 필링. 세포용해버퍼/단백분해효소용.', keywords: ['microliter', '초정밀', 'WSP', 'cell', 'urea'], specs: [['Filling', '1 µL ~ 3,000 µL'], ['Accuracy', '10 µL ±0.15 / 1 mL ±10'], ['채널', '1 (up to 16 cascade)']] },
+      { model: 'MF106', name: 'MF106 High-Protection Industrial Pump (IP66/67)', cat: 'Peristaltic · High-Protection', desc: 'IP66/67 방수방진. 생의약/광업/석유화학 현장용.', keywords: ['IP67', 'IP66', '방수', '방진', 'MF106', '산업', 'biopharm'], specs: [['Flow', '0.006 ~ 7,800 mL/min'], ['Speed', '0.1 ~ 360 rpm'], ['Shell', '알루미늄'], ['무게', '11 kg']] },
+      { model: 'MF133', name: 'MF133 High-Flow High-Protection Pump', cat: 'Peristaltic · High-Protection', desc: '최대 33 L/min 고유량 + IP66/67 방수. 광업/석유 현장용.', keywords: ['high-flow', '33L', 'MF133', '광업', '산업', 'IP67'], specs: [['Flow', '10 ~ 33,000 mL/min'], ['Power', '<350 W'], ['무게', '24 kg (pump head 포함)']] },
+      { model: 'EF800', name: 'EF800 Explosion-proof Peristaltic Pump', cat: 'Peristaltic · Explosion-proof', desc: 'Ex tb IIIC T130°C Db 방폭 인증. 가연성 액체 공정.', keywords: ['explosion', '방폭', 'EF800', '가연성', 'ATEX', 'Ex'], specs: [['Flow', '0.005 ~ 7,800 mL/min'], ['방폭등급', 'Ex tb IIIC T130°C Db'], ['IP', 'IP66'], ['무게', '12 kg']] },
+      { model: 'TYS01-02', name: 'TYS01-02 Dual Rate Syringe Pump', cat: 'Syringe · Dual', desc: '2채널 독립/동기/프로그래밍 3모드. 미세유체/마이크로스피어/오가노이드.', keywords: ['syringe', 'dual', 'TYS', 'microfluidic', 'organoid', '시린지', '2채널'], specs: [['Syringe', '0.5 µL ~ 100 mL'], ['Accuracy', '±0.35% (>30% stroke)'], ['Force', '35 kgf adjustable'], ['Display', '7" color LCD']] },
+      { model: 'TYD02-01', name: 'TYD02-01 Laboratory Syringe Pump (2ch)', cat: 'Syringe · Lab', desc: '2채널 실험실용 시린지 펌프. 경사 조절/연속 순환.', keywords: ['syringe', 'lab', 'TYD', '2-channel', '전기방사'], specs: [['Syringe', '10 µL ~ 140 mL'], ['채널', '2'], ['Force', '> 20 kgf'], ['Display', '5" color LCD']] },
+      { model: 'TYD02-06', name: 'TYD02-06 Six-Channel Syringe Pump', cat: 'Syringe · Lab', desc: '6채널 고밀도 시린지 펌프. 병렬 다종 샘플 처리.', keywords: ['syringe', '6-channel', 'TYD02-06', '멀티'], specs: [['채널', '6'], ['Syringe', '10 µL ~ 60 mL'], ['Force', '> 20 kgf']] },
+      { model: 'TYD02-10', name: 'TYD02-10 Ten-Channel Syringe Pump', cat: 'Syringe · Lab', desc: '10채널 최대 집적도. 병렬 실험 최대화.', keywords: ['syringe', '10-channel', 'TYD02-10'], specs: [['채널', '10'], ['Syringe', '10 µL ~ 60 mL'], ['무게', '5.75 kg']] },
+      { model: 'TGD01-01', name: 'TGD01-01 Precision High-Pressure Syringe Pump', cat: 'Syringe · Industrial', desc: '91 kgf 초고추력. 고점도/고압 용기 주입. 부식성 액체 대응.', keywords: ['syringe', 'high-pressure', '고압', '고점도', 'TGD', 'stainless', 'corrosive'], specs: [['Syringe', '0.5 µL ~ 140 mL'], ['Force', '91 kgf'], ['Flow', '3 pL/min ~ 214.9 mL/min'], ['IP', 'IP31']] },
+      { model: 'TSD01-01', name: 'TSD01-01 Two-way Push-pull Syringe Pump', cat: 'Syringe · Dual', desc: '연속 송액(push-pull) 구성. 5가지 작동 모드.', keywords: ['push-pull', 'TSD', 'continuous', '연속송액', '시린지'], specs: [['Syringe', '10 µL ~ 60 mL'], ['Flow', '0.184 nL/min ~ 83.318 mL/min'], ['Force', '> 20 kgf']] },
+      { model: 'TFD02-01', name: 'TFD02-01 Split Style Syringe Pump', cat: 'Syringe · Split', desc: '컨트롤러-실행부 분리형. 뇌정위수술기 같은 장비와 병행 설치.', keywords: ['split', 'stereotaxis', 'brain', 'TFD02', '분리형'], specs: [['Syringe', '10 µL ~ 60 mL'], ['Force', '> 10 kgf adjustable'], ['Flow', '0.184 nL/min ~ 83.318 mL/min']] },
+      { model: 'G3030-1S', name: 'G3030-1S Industrial Syringe Pump', cat: 'Syringe · Industrial', desc: '산업용 임베디드 시린지. 외부 신호/PC 통신/자동 오프라인 모드.', keywords: ['industrial', 'embedded', 'G3030', '산업', '임베디드', 'OEM'], specs: [['Syringe', '50 µL ~ 5 mL'], ['Valve', '3/4/6/9-way'], ['통신', 'RS232/RS485'], ['Flow', '0.0005 ~ 250 mL/min']] },
+      { model: 'CT3001S', name: 'CT3001S Speed Variable Precision Gear Pump', cat: 'Gear Pump', desc: '기어펌프. 고점도 액체 이송. 200 cSt 이하 대응.', keywords: ['gear', 'CT3001', '고점도', 'viscous', '기어펌프'], specs: [['Flow', '15 ~ 2,700 mL/min'], ['Speed', '50 ~ 3,000 rpm'], ['Pressure', '≤ 1.4 MPa'], ['점도', '≤ 200 cSt']] },
+      { model: 'CT3001F', name: 'CT3001F Intelligent Dispensing Gear Pump', cat: 'Gear Pump', desc: '고점도 액체용 지능형 분주 기어펌프. 4가지 작동 모드.', keywords: ['gear', 'intelligent', 'dispensing', 'CT3001F', '고점도'], specs: [['Flow', '15 ~ 2,700 mL/min'], ['Speed', '50 ~ 3,000 rpm'], ['Pressure', '≤ 1.4 MPa'], ['Display', 'Color LCD touch']] }
+    ],
+    alicat: [
+      { model: 'MC-Series', name: 'MC-Series Mass Flow Controller (Laminar DP)', cat: 'Gas Flow · MFC', desc: '라미나 차압 방식. 98종 가스 프리셋. 가장 대중적인 MFC 라인.', keywords: ['MFC', 'mass flow', 'controller', 'MC', 'laminar', 'gas', 'Alicat', 'stand'], specs: [['Accuracy', '±0.6% of reading'], ['Gases', '98 preloaded'], ['Turndown', '200:1'], ['통신', 'RS232/EtherCAT/Modbus']], url: 'https://www.alicat.com/products/gas-flow/mass-flow-controller/laminar-dp-mass-flow-controllers/' },
+      { model: 'MCV-Series', name: 'MCV-Series Vacuum MFC (with Shutoff)', cat: 'Gas Flow · MFC', desc: '진공 공정용 MFC. 내장형 공압 차단밸브. CVD/PVD/ALD 이상적.', keywords: ['vacuum', 'MCV', 'shutoff', 'CVD', 'PVD', 'ALD', '진공', 'sputtering', 'Alicat'], specs: [['Accuracy', '±0.5% reading'], ['Shutoff', '1×10⁻⁹ atm·scc/s He'], ['Full Scale', '0.5 SCCM ~ 20 SLPM'], ['표준', 'SEMI footprint']], url: 'https://www.alicat.com/products/gas-flow/mass-flow-controller/vacuum-controllers-sff-mcv-series/' },
+      { model: 'MCQ-Series', name: 'MCQ-Series High-Pressure MFC (22 barG)', cat: 'Gas Flow · MFC', desc: '22 barG 고압 가스 대응 MFC.', keywords: ['MCQ', 'high-pressure', '고압', '22bar', 'MFC', 'gas'], specs: [['압력', '22 barG'], ['정확도', '±0.8% reading'], ['용도', 'High-pressure gas delivery']] },
+      { model: 'Whisper MC', name: 'Whisper Low-Pressure Drop MFC', cat: 'Gas Flow · MFC', desc: '저압 강하 설계. 민감한 공정 대응, \'투명\' 측정.', keywords: ['whisper', 'low-pressure', '저압', 'MFC', 'ΔP', 'gas', '민감'], specs: [['ΔP', '극저압 구간 최적화'], ['정확도', '±0.8% reading'], ['용도', 'Analytical / OEM']], url: 'https://www.alicat.com/products/gas-flow/mass-flow-controller/low-pressure-drop-mass-flow-controllers/' },
+      { model: 'BASIS MC', name: 'BASIS Compact MFC (OEM)', cat: 'Gas Flow · MFC', desc: '컴팩트 OEM용 MFC. 1 SCCM~20 SLPM, 8가스 프리셋.', keywords: ['BASIS', 'compact', 'OEM', 'small', '소형', 'MFC'], specs: [['유량', '1 SCCM ~ 20 SLPM'], ['가스', 'Air/CO₂/Ar/O₂/N₂/N₂O/He/H₂'], ['크기', '초소형 폼팩터']], url: 'https://www.alicat.com/products/gas-flow/mass-flow-controller/small-thermal-mass-flow-controllers/' },
+      { model: 'IS-Max MC', name: 'IS-Max Intrinsically Safe MFC (ATEX/Class I Div 1)', cat: 'Gas Flow · MFC', desc: '방폭지역 내장 안전 인증 MFC.', keywords: ['IS-Max', 'ATEX', 'intrinsically safe', '방폭', 'class I div 1', 'explosive'], specs: [['인증', 'Class I Div 1 / ATEX'], ['용도', '폭발성 가스 분위기'], ['정확도', '±0.8% reading']], url: 'https://www.alicat.com/products/gas-flow/mass-flow-controller/class-i-div-1-flow-controllers/' },
+      { model: 'CODA MFC', name: 'CODA Coriolis Mass Flow Controller', cat: 'Gas Flow · MFC', desc: '코리올리 방식. 진짜 질량 측정 (밀도 변화 영향 없음).', keywords: ['coriolis', 'CODA', 'mass', '가장정확', 'Alicat'], specs: [['원리', 'Coriolis 직접 질량'], ['정확도', '최고급'], ['용도', '복합가스 · 미지 가스']], url: 'https://www.alicat.com/products/gas-flow/mass-flow-controller/gas-low-flow-coriolis-controllers/' },
+      { model: 'M-Series', name: 'M-Series Mass Flow Meter (Laminar DP)', cat: 'Gas Flow · MFM', desc: '컨트롤러와 동일 엔진의 측정 전용 버전.', keywords: ['MFM', 'mass flow meter', '측정', 'M-series', 'laminar'], specs: [['Accuracy', '±0.6% reading'], ['출력', 'Analog + Digital'], ['용도', 'OEM 통합 측정']], url: 'https://www.alicat.com/products/gas-flow/mass-flow-meter/laminar-dp-mass-flow-meters/' },
+      { model: 'Whisper M', name: 'Whisper Low-Pressure Drop MFM', cat: 'Gas Flow · MFM', desc: '\'투명\' 측정 - 공정 유량에 영향 최소.', keywords: ['whisper', 'MFM', 'low-pressure', 'invisible'], specs: [['ΔP', 'Ultra-low'], ['Accuracy', '±0.8% reading']], url: 'https://www.alicat.com/products/gas-flow/mass-flow-meter/low-pressure-drop-mass-flow-meters/' },
+      { model: 'M-Series Portable', name: 'Portable MFM (Battery)', cat: 'Gas Flow · Portable', desc: '핸드헬드 휴대용 유량계 + 배터리.', keywords: ['portable', 'handheld', '휴대', '배터리', 'battery', 'calibrator'], specs: [['Power', 'Battery'], ['용도', '필드 검증/캘리브레이션']], url: 'https://www.alicat.com/products/gas-flow/mass-flow-meter/portable-mass-flow-meters/' },
+      { model: 'LC-Series', name: 'LC-Series Liquid Flow Controller', cat: 'Liquid Flow', desc: '라미나 DP 액체 유량 컨트롤러 + 온도/압력 동시 측정.', keywords: ['liquid', 'LC', '액체', 'flow', 'laminar'], specs: [['측정', 'Flow + Temp + Pressure'], ['용도', '크로마토/필터링']], url: 'https://www.alicat.com/products/liquid-flow/liquid-flow-controller/laminar-dp-liquid-controllers/' },
+      { model: 'CODA LC', name: 'CODA Coriolis Liquid Flow Controller', cat: 'Liquid Flow', desc: '코리올리 액체 유량 컨트롤러. 고압/혼합 유체.', keywords: ['coriolis', 'CODA', '액체', 'liquid', '고압'], specs: [['방식', 'Coriolis'], ['압력', 'high'], ['용도', '펌프 제어']], url: 'https://www.alicat.com/products/liquid-flow/liquid-flow-controller/liquid-low-flow-coriolis-controllers/' },
+      { model: 'CODA Pump', name: 'CODA Coriolis Pump System', cat: 'Liquid Flow', desc: '코리올리 측정 + 펌프 일체형 시스템.', keywords: ['pump', 'CODA', '시스템', '펌프'], specs: [['구성', 'Pump + Coriolis meter'], ['용도', 'Closed-loop flow control']], url: 'https://www.alicat.com/products/liquid-flow/liquid-flow-controller/coriolis-mass-flow-pump-system/' },
+      { model: 'PC-Series', name: 'PC-Series Pressure Controller', cat: 'Pressure', desc: '스크린/인더스트리얼 프로토콜 지원 범용 압력 컨트롤러.', keywords: ['pressure', 'PC', '압력', 'controller', 'industrial'], specs: [['타입', 'Absolute / Gauge / Differential'], ['옵션', 'Display + Industrial protocols']], url: 'https://www.alicat.com/products/pressure/pressure-controller/pressure-controllers/' },
+      { model: 'PCD-Series', name: 'PCD Dual-Valve Pressure Controller', cat: 'Pressure', desc: '이중밸브. 데드엔드/누설 점검 공정.', keywords: ['PCD', 'dual', '이중밸브', 'leak', 'dead-end'], specs: [['밸브', 'Dual-valve'], ['용도', 'Leak check / Dead-ended']], url: 'https://www.alicat.com/products/pressure/pressure-controller/dual-valve-pressure-controllers/' },
+      { model: 'EPC', name: 'EPC Ultra-Compact OEM Pressure Controller', cat: 'Pressure', desc: '초소형 OEM용 압력 컨트롤러. 1/2밸브 구성.', keywords: ['EPC', 'OEM', '초소형', 'small', 'pressure', 'compact'], specs: [['크기', 'Ultra-compact'], ['구성', '1-valve or 2-valve']], url: 'https://www.alicat.com/products/pressure/pressure-controller/small-pressure-controllers-oem/' },
+      { model: 'P-Series', name: 'P-Series Pressure Meter', cat: 'Pressure', desc: '스크린 + 프로토콜 지원 정밀 압력 측정기.', keywords: ['pressure', 'P-series', 'measurement', 'meter', 'gauge'], specs: [['타입', 'Abs/Gauge/Diff'], ['옵션', 'Display + Modbus/EtherNet-IP']], url: 'https://www.alicat.com/products/pressure/pressure-meter/pressure-meters/' },
+      { model: 'IS-Pro P', name: 'IS-Pro Intrinsically Safe Pressure Meter', cat: 'Pressure', desc: '방폭지역용 압력 측정기 (Class I Div 1 / ATEX).', keywords: ['IS-Pro', 'intrinsically', 'safe', '방폭', 'pressure', 'ATEX'], specs: [['인증', 'Class I Div 1 / ATEX']], url: 'https://www.alicat.com/products/pressure/pressure-meter/class-i-div-1-pressure-gauges/' },
+      { model: 'Portable P', name: 'Portable Pressure Meter (Battery)', cat: 'Pressure · Portable', desc: '배터리 구동 휴대 압력 측정기.', keywords: ['portable', 'handheld', 'battery', '휴대', 'pressure'], specs: [['Power', 'Battery']], url: 'https://www.alicat.com/products/pressure/pressure-meter/portable-pressure-meters/' },
+      { model: 'MXM Gas Blender', name: 'FusionFlow MXM Gas Blending System', cat: 'Gas Mixer', desc: '턴키 가스 블렌딩 시스템. 복합 혼합가스 제공.', keywords: ['mixer', 'blender', 'MXM', 'FusionFlow', '혼합', '가스믹서'], specs: [['구성', 'Multi-MFC integrated'], ['용도', '실험/산업 가스 블렌딩']], url: 'https://www.alicat.com/products/gas-flow/gas-mixer/gas-blending-system/' },
+      { model: 'IMX Industrial Mixer', name: 'FusionFlow IMX Industrial Gas Mixer', cat: 'Gas Mixer', desc: '산업용 가스 믹서. 대용량/연속운전 대응.', keywords: ['industrial', 'IMX', 'FusionFlow', 'mixer', '산업', '대용량'], specs: [['용도', 'Industrial blending'], ['특장', 'High-capacity + Automation']], url: 'https://www.alicat.com/products/gas-flow/gas-mixer/industrial-gas-mixer/' },
+      { model: 'FP-25', name: 'FP-25 Environmental Air Particle Calibrator', cat: 'Calibrator', desc: 'PM 에어 샘플러 전용 휴대 캘리브레이터.', keywords: ['FP-25', 'calibrator', 'air', 'PM', 'particle', '환경', 'portable'], specs: [['용도', 'PM Air Sampler calibration'], ['크기', 'Handheld'], ['인증', 'NIST-traceable']], url: 'https://www.alicat.com/products/calibrators/fp-25-field-flow-calibrator-for-pm-air-samplers/' },
+      { model: 'PCU', name: 'PCU Portable Calibration Unit', cat: 'Calibrator', desc: '최대 500 SLPM, 100,000:1 운영 범위의 휴대 캘리브레이터.', keywords: ['PCU', 'portable', 'calibrator', '500SLPM', '휴대', 'range'], specs: [['최대', '500 SLPM'], ['범위', '100,000:1'], ['인증', 'NIST-traceable'], ['케이스', 'Industrial carrying case']], url: 'https://www.alicat.com/products/calibrators/portable-mass-flow-calibration-unit/' }
+    ]
+  };
+
   const SYMPTOMS = [
     '전원이 켜지지 않음',
     '온도/유량 제어 오류',
@@ -1770,12 +2122,263 @@
         return;
       }
 
-      // 그 외 제조사: 서비스 섹션으로 스크롤
-      setTimeout(() => {
-        document.getElementById('services').scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }, 180);
+      // 그 외 제조사: 제품 브라우저 (검색창 + 카드 그리드) 열기
+      openProductBrowser(mfr);
     });
   });
+
+  // ============ Product Browser (SH / Leadfluid / Alicat) ============
+  function openProductBrowser(mfrKey) {
+    const mfr = MFR_INFO[mfrKey];
+    const products = MFR_PRODUCTS[mfrKey] || [];
+    // Unique categories
+    const cats = Array.from(new Set(products.map(p => p.cat)));
+
+    const catChips = `
+      <button class="pb-chip active" data-cat="__all">
+        전체 <span class="pb-chip-count">${products.length}</span>
+      </button>
+      ${cats.map(c => {
+        const n = products.filter(p => p.cat === c).length;
+        return `<button class="pb-chip" data-cat="${escapeHtml(c)}">${escapeHtml(c)} <span class="pb-chip-count">${n}</span></button>`;
+      }).join('')}
+    `;
+
+    const html = `
+      <div class="pb-hero">
+        <div class="pb-hero-sub">${escapeHtml(mfr.label || mfrKey)} · 제품 카탈로그</div>
+        <h3 class="pb-hero-title">원하시는 제품을 검색해 보세요</h3>
+        <p class="pb-hero-desc">${escapeHtml(mfr.desc || '')}</p>
+        <div class="pb-search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.3-4.3"/></svg>
+          <input type="text" id="pbSearchInput" placeholder="모델명 · 키워드 · 카테고리로 검색 (예: 진공, peristaltic, MFC, 고온...)" autocomplete="off" />
+          <button class="pb-search-clear" id="pbSearchClear" aria-label="검색어 지우기" style="display:none;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+          </button>
+        </div>
+        <div class="pb-chips" id="pbChips">${catChips}</div>
+      </div>
+
+      <div class="pb-result-bar">
+        <div class="pb-result-count" id="pbResultCount">${products.length}개 제품</div>
+        <div class="pb-result-hint">카드를 클릭하면 구매/기술/카탈로그 옵션이 열립니다</div>
+      </div>
+
+      <div class="pb-grid" id="pbGrid"></div>
+
+      <div class="pb-empty" id="pbEmpty" style="display:none;">
+        <div class="pb-empty-icon">🔍</div>
+        <div class="pb-empty-title">검색 결과가 없습니다</div>
+        <div class="pb-empty-desc">다른 키워드로 다시 시도해 보세요. 찾는 제품이 여기 없어도 문의해 주시면 확인 후 안내드립니다.</div>
+        <button class="btn btn-outline" onclick="openTechFlow()">찾는 제품 문의하기</button>
+      </div>
+
+      <div class="form-footer">
+        <button class="btn btn-outline" onclick="closeModal()">닫기</button>
+      </div>
+    `;
+    openModal(html, `${mfr.label || mfrKey} · 제품 선택`, `${mfrKey.toUpperCase()} Products`, true);
+
+    // Render + filter
+    const state = { q: '', cat: '__all' };
+    function renderCards() {
+      const q = state.q.toLowerCase().trim();
+      const filtered = products.filter(p => {
+        if (state.cat !== '__all' && p.cat !== state.cat) return false;
+        if (!q) return true;
+        const hay = (p.model + ' ' + p.name + ' ' + p.desc + ' ' + p.cat + ' ' + (p.keywords || []).join(' ')).toLowerCase();
+        return hay.includes(q);
+      });
+
+      const grid = $('#pbGrid');
+      const empty = $('#pbEmpty');
+      const count = $('#pbResultCount');
+
+      if (filtered.length === 0) {
+        grid.innerHTML = '';
+        empty.style.display = '';
+        count.textContent = '0개 제품';
+        return;
+      }
+      empty.style.display = 'none';
+      count.textContent = `${filtered.length}개 제품`;
+
+      grid.innerHTML = filtered.map((p, idx) => {
+        const kwChips = (p.keywords || []).slice(0, 4).map(k =>
+          `<span class="pb-card-kw">${escapeHtml(k)}</span>`
+        ).join('');
+        const specs = (p.specs || []).slice(0, 3).map(([k, v]) =>
+          `<div class="pb-card-spec-row"><span>${escapeHtml(k)}</span><span>${escapeHtml(v)}</span></div>`
+        ).join('');
+        return `
+          <div class="pb-card" data-idx="${idx}" data-model="${escapeHtml(p.model)}">
+            <div class="pb-card-head">
+              <div class="pb-card-cat">${escapeHtml(p.cat)}</div>
+              <div class="pb-card-model">${escapeHtml(p.model)}</div>
+              <div class="pb-card-name">${escapeHtml(p.name)}</div>
+            </div>
+            <p class="pb-card-desc">${escapeHtml(p.desc)}</p>
+            <div class="pb-card-specs">${specs}</div>
+            <div class="pb-card-kws">${kwChips}</div>
+            <div class="pb-card-cta">
+              <span>자세히 · 문의하기</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      // Attach click handlers
+      grid.querySelectorAll('.pb-card').forEach(el => {
+        el.addEventListener('click', () => {
+          const model = el.dataset.model;
+          const prod = products.find(p => p.model === model);
+          if (prod) showMfrProductActionSheet(el, prod, mfrKey);
+        });
+      });
+    }
+
+    renderCards();
+
+    const input = $('#pbSearchInput');
+    const clearBtn = $('#pbSearchClear');
+    input.addEventListener('input', () => {
+      state.q = input.value;
+      clearBtn.style.display = input.value ? '' : 'none';
+      renderCards();
+    });
+    clearBtn.addEventListener('click', () => {
+      input.value = '';
+      state.q = '';
+      clearBtn.style.display = 'none';
+      renderCards();
+      input.focus();
+    });
+
+    $('#pbChips').querySelectorAll('.pb-chip').forEach(chip => {
+      chip.addEventListener('click', () => {
+        $('#pbChips').querySelectorAll('.pb-chip').forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+        state.cat = chip.dataset.cat;
+        renderCards();
+      });
+    });
+
+    // Focus search input shortly after open
+    setTimeout(() => input.focus(), 200);
+  }
+
+  // Product action sheet for SH/LF/Alicat products (buy / tech / external link)
+  function showMfrProductActionSheet(cardEl, prod, mfrKey) {
+    // Remove any existing sheet
+    document.querySelectorAll('.action-sheet-overlay').forEach(o => o.remove());
+
+    const mfr = MFR_INFO[mfrKey];
+    const externalUrl = prod.url || mfr.url;
+
+    const overlay = document.createElement('div');
+    overlay.className = 'action-sheet-overlay';
+    overlay.innerHTML = `
+      <div class="action-sheet" onclick="event.stopPropagation()">
+        <div class="action-sheet-title">${escapeHtml(prod.model)} · ${escapeHtml(prod.cat)}</div>
+        <button class="action-btn primary" data-act="buy">
+          <span>견적 · 구매 문의</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        </button>
+        <button class="action-btn" data-act="tech">
+          <span>기술 문의</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        </button>
+        ${externalUrl ? `
+        <a class="action-btn" data-act="external" href="${externalUrl}" target="_blank" rel="noopener">
+          <span>제조사 공식 페이지</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </a>` : ''}
+        <div class="action-sheet-cancel" data-act="cancel">취소</div>
+      </div>
+    `;
+    cardEl.appendChild(overlay);
+
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) overlay.remove();
+    });
+
+    overlay.querySelectorAll('[data-act]').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const act = btn.dataset.act;
+        if (act === 'cancel') { overlay.remove(); return; }
+        if (act === 'external') { return; /* let link open */ }
+        if (act === 'buy') {
+          overlay.remove();
+          openMfrProductBuyFlow(prod, mfrKey);
+        } else if (act === 'tech') {
+          overlay.remove();
+          openTechFlow({ presetProduct: `${prod.model} (${prod.name})` });
+        }
+      });
+    });
+  }
+
+  // Buy flow for an MFR product (SH / LF / Alicat) - similar to Duwon but adapted
+  function openMfrProductBuyFlow(prod, mfrKey) {
+    const mfr = MFR_INFO[mfrKey];
+    const specsHtml = (prod.specs || []).slice(0, 5).map(([k, v]) =>
+      `<div style="display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px dashed var(--line);font-size:0.78rem;">
+        <span style="color:var(--muted);">${escapeHtml(k)}</span>
+        <span style="color:var(--navy-900);font-weight:500;">${escapeHtml(v)}</span>
+      </div>`
+    ).join('');
+
+    const html = `
+      <div class="notice-box">
+        <div class="notice-icon">!</div>
+        <div class="notice-text">
+          <strong>${escapeHtml(mfr.label)} · ${escapeHtml(prod.model)}</strong>
+          <small>${escapeHtml(prod.name)}</small>
+        </div>
+      </div>
+
+      <div style="background:var(--navy-50);border:1px solid var(--navy-100);border-radius:var(--radius-md);padding:14px 18px;margin-bottom:20px;">
+        <div style="font-size:0.72rem;color:var(--navy-700);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:8px;font-weight:600;">Key Specifications</div>
+        ${specsHtml}
+      </div>
+
+      <form id="mfrBuyForm">
+        <div class="form-group">
+          <label>문의 내용 <span class="req">*</span></label>
+          <textarea class="form-control" name="content" required placeholder="필요 수량, 옵션 요구사항, 설치 환경 등을 적어주세요."></textarea>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>이메일 <span class="req">*</span></label>
+            <input type="email" class="form-control" name="email" required placeholder="name@company.com" />
+          </div>
+          <div class="form-group">
+            <label>담당자명 <span class="req">*</span></label>
+            <input type="text" class="form-control" name="name" required placeholder="홍길동" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>연락처 · 소속기관</label>
+          <input type="text" class="form-control" name="org" placeholder="OO대학교 / 010-0000-0000" />
+        </div>
+        <div class="form-footer">
+          <button type="button" class="btn btn-outline" onclick="closeModal()">취소</button>
+          <button type="submit" class="btn btn-primary">견적 요청</button>
+        </div>
+      </form>
+    `;
+    openModal(html, `${prod.model} · 구매 문의`, `${mfr.label} · Buy`);
+
+    $('#mfrBuyForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const fd = new FormData(e.target);
+      console.log('[mfr buy inquiry]', { mfr: mfrKey, model: prod.model, ...Object.fromEntries(fd) });
+      closeModal();
+      showToast('견적 요청이 접수되었습니다. 영업일 기준 1~2일 내 회신드립니다.');
+    });
+  }
 
   // ============ Service 01 : Buy ============
   function openBuyFlow() {
