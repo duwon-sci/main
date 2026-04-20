@@ -194,6 +194,194 @@
     word-break: keep-all;
   }
 
+  /* ---------- Featured Product banner ---------- */
+  .featured {
+    padding: 56px 0 72px;
+    background: linear-gradient(180deg, var(--bg) 0%, var(--navy-50) 100%);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .featured-inner {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 56px;
+    align-items: center;
+  }
+  .featured-visual {
+    background: linear-gradient(135deg, #0a1a35 0%, #1a3a68 65%, #24508a 100%);
+    border-radius: var(--radius-lg);
+    aspect-ratio: 4/5;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+    position: relative;
+    box-shadow: var(--shadow-lg);
+    transition: transform 0.35s cubic-bezier(0.2,0.8,0.2,1);
+  }
+  .featured-visual::before {
+    content: "";
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 75% 55% at 50% 42%, rgba(255,155,60,0.18), transparent 70%);
+    pointer-events: none;
+  }
+  .featured-visual::after {
+    /* subtle scan-line texture */
+    content: "";
+    position: absolute; inset: 0;
+    background-image: repeating-linear-gradient(0deg, rgba(255,255,255,0.02) 0px, rgba(255,255,255,0.02) 1px, transparent 1px, transparent 4px);
+    pointer-events: none;
+  }
+  .featured-visual img {
+    max-width: 78%; max-height: 86%;
+    object-fit: contain;
+    filter: drop-shadow(0 14px 36px rgba(0,0,0,0.5));
+    position: relative; z-index: 1;
+  }
+  .featured-tag-top {
+    position: absolute;
+    top: 20px; left: 22px;
+    z-index: 2;
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.15em;
+    color: rgba(255,255,255,0.8);
+    text-transform: uppercase;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .featured-tag-top::before {
+    content: ""; width: 24px; height: 1px;
+    background: rgba(255,255,255,0.6);
+  }
+  .featured-tag-temp {
+    position: absolute;
+    bottom: 20px; right: 22px;
+    z-index: 2;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.18);
+    padding: 6px 12px;
+    border-radius: 3px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: flex; align-items: center; gap: 8px;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.92);
+    letter-spacing: 0.04em;
+  }
+  .featured-tag-temp-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: #ff9500;
+    animation: pulse-dot 1.6s ease-in-out infinite;
+  }
+  @keyframes pulse-dot {
+    0%, 100% { opacity: 0.55; transform: scale(1); }
+    50%      { opacity: 1;    transform: scale(1.2); }
+  }
+  .featured-content .featured-eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    color: var(--navy-700);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .featured-content .featured-eyebrow::before {
+    content: ""; width: 28px; height: 1px;
+    background: var(--navy-700);
+  }
+  .featured-content .featured-eyebrow .flagship {
+    background: var(--navy-800);
+    color: white;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    margin-left: 6px;
+  }
+  .featured-content h2.featured-title {
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    color: var(--navy-900);
+    margin-bottom: 6px;
+  }
+  .featured-subtitle {
+    font-size: 1rem;
+    color: var(--navy-600);
+    font-weight: 500;
+    margin-bottom: 22px;
+    letter-spacing: -0.005em;
+  }
+  .featured-desc {
+    font-size: 0.96rem;
+    color: var(--ink-soft);
+    line-height: 1.75;
+    margin-bottom: 26px;
+    word-break: keep-all;
+  }
+  .featured-desc strong { color: var(--navy-900); font-weight: 600; }
+  .featured-kpis {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-bottom: 28px;
+  }
+  .featured-kpi {
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    padding: 12px 8px;
+    text-align: center;
+    background: white;
+  }
+  .featured-kpi-val {
+    font-size: 1rem; font-weight: 700;
+    color: var(--navy-900); letter-spacing: -0.01em;
+    line-height: 1.2;
+  }
+  .featured-kpi-lab {
+    font-size: 0.65rem; color: var(--muted);
+    letter-spacing: 0.05em; text-transform: uppercase;
+    margin-top: 4px;
+  }
+  .featured-ctas {
+    display: flex; gap: 12px; flex-wrap: wrap;
+  }
+  .featured-btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    gap: 8px;
+    padding: 13px 24px;
+    border-radius: var(--radius-md);
+    font-weight: 500;
+    font-size: 0.92rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    letter-spacing: -0.005em;
+  }
+  .featured-btn svg { width: 14px; height: 14px; }
+  .featured-btn-primary {
+    background: var(--navy-800); color: white;
+  }
+  .featured-btn-primary:hover {
+    background: var(--navy-900); transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+  }
+  .featured-btn-outline {
+    background: transparent;
+    color: var(--navy-800);
+    border: 1px solid var(--navy-700);
+  }
+  .featured-btn-outline:hover {
+    background: var(--navy-800); color: white;
+  }
+
+  @media (max-width: 960px) {
+    .featured-inner { grid-template-columns: 1fr; gap: 32px; }
+    .featured-visual { aspect-ratio: 4/3; order: -1; }
+    .featured-kpis { grid-template-columns: repeat(2, 1fr); }
+  }
+
   /* ---------- Section Title ---------- */
   .section-title {
     display: flex;
@@ -1037,6 +1225,29 @@
   .action-btn.primary:hover {
     background: var(--navy-900);
   }
+  /* Detail page button — visually separated with top margin + accent */
+  .action-btn.action-btn-detail {
+    margin-top: 4px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    background: white;
+    color: var(--navy-800);
+    border: 1px solid var(--navy-700);
+    text-decoration: none;
+    position: relative;
+  }
+  .action-btn.action-btn-detail::before {
+    content: "";
+    position: absolute;
+    top: -6px; left: 14px; right: 14px;
+    height: 1px;
+    background: var(--line);
+  }
+  .action-btn.action-btn-detail:hover {
+    background: var(--navy-700);
+    color: white;
+    border-color: var(--navy-700);
+  }
   .action-btn svg {
     width: 14px;
     height: 14px;
@@ -1142,6 +1353,61 @@
       두원과학은 국내외 주요 과학장비 브랜드의 공식 딜러 &middot; 서비스 파트너로서
       연구 현장의 구매와 기술 지원, A/S를 함께합니다.
     </p>
+  </div>
+</section>
+
+<!-- ============ Featured Product ============ -->
+<section class="featured" id="featured">
+  <div class="container featured-inner">
+    <div class="featured-visual">
+      <div class="featured-tag-top">DUWON SCIENCE · FLAGSHIP</div>
+      <img id="featuredImg" alt="AI-LHFZ 3000 · CO₂ 레이저 단결정 육성 시스템" />
+      <div class="featured-tag-temp">
+        <span class="featured-tag-temp-dot"></span>
+        MELT · 2850 °C
+      </div>
+    </div>
+    <div class="featured-content">
+      <div class="featured-eyebrow">
+        Featured Product
+        <span class="flagship">FLAGSHIP</span>
+      </div>
+      <h2 class="featured-title">AI-LHFZ 3000</h2>
+      <div class="featured-subtitle">CO₂ Laser-Heated Floating Zone Furnace</div>
+      <p class="featured-desc">
+        두원과학이 자체 개발한 <strong>플래그십 결정성장장비</strong>입니다.
+        고출력 CO₂ 레이저로 최대 3,000 °C의 극고온 환경을 구현하고,
+        AI 실시간 용융대 제어로 숙련도와 무관하게 <strong>일관된 단결정 성장</strong>을 실현합니다.
+      </p>
+      <div class="featured-kpis">
+        <div class="featured-kpi">
+          <div class="featured-kpi-val">3,000 °C</div>
+          <div class="featured-kpi-lab">Max Temp</div>
+        </div>
+        <div class="featured-kpi">
+          <div class="featured-kpi-val">4-Axis</div>
+          <div class="featured-kpi-lab">Precision</div>
+        </div>
+        <div class="featured-kpi">
+          <div class="featured-kpi-val">AI</div>
+          <div class="featured-kpi-lab">Real-Time</div>
+        </div>
+        <div class="featured-kpi">
+          <div class="featured-kpi-val">CF</div>
+          <div class="featured-kpi-lab">Crucible-Free</div>
+        </div>
+      </div>
+      <div class="featured-ctas">
+        <a class="featured-btn featured-btn-primary" href="ai-lhfz-3000.html">
+          자세히 보기
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+        <button class="featured-btn featured-btn-outline" id="featuredDownload">
+          카탈로그 다운로드
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v14m0 0l-5-5m5 5l5-5M5 21h14"/></svg>
+        </button>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -2050,6 +2316,14 @@
 
     const overlay = document.createElement('div');
     overlay.className = 'action-sheet-overlay';
+
+    // Conditional "자세히 보기" button — only for AI-LHFZ 3000 which has a detail page
+    const detailButton = prod.k === 'ai' ? `
+        <a class="action-btn action-btn-detail" data-act="detail" href="ai-lhfz-3000.html">
+          <span>자세히 보기 · 제품 상세페이지</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </a>` : '';
+
     overlay.innerHTML = `
       <div class="action-sheet" onclick="event.stopPropagation()">
         <div class="action-sheet-title">${escapeHtml(prod.model || '')} · ${escapeHtml(prod.t)}</div>
@@ -2065,6 +2339,7 @@
           <span>카탈로그 다운로드</span>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v14m0 0l-5-5m5 5l5-5M5 21h14"/></svg>
         </button>
+        ${detailButton}
         <div class="action-sheet-cancel" data-act="cancel">취소</div>
       </div>
     `;
@@ -2081,6 +2356,10 @@
         e.stopPropagation();
         const act = btn.dataset.act;
         if (act === 'cancel') { overlay.remove(); return; }
+        if (act === 'detail') {
+          // Let the link navigate naturally; no preventDefault
+          return;
+        }
         if (act === 'buy') {
           overlay.remove();
           openProductBuyFlow(prod);
@@ -2397,6 +2676,24 @@
 
   // expose for inline handlers
   window.closeModal = closeModal;
+
+  // ---- Featured Product initialization ----
+  // Re-use the AI image already embedded in DUWON_VISUALS to avoid duplicating the base64 string.
+  (function initFeatured() {
+    const featuredImg = document.getElementById('featuredImg');
+    if (featuredImg && DUWON_VISUALS && DUWON_VISUALS.ai && DUWON_VISUALS.ai.photo) {
+      const match = DUWON_VISUALS.ai.photo.match(/src="(data:image[^"]+)"/);
+      if (match) featuredImg.src = match[1];
+    }
+    // Catalog download button (same flow as Duwon view's AI catalog)
+    const dlBtn = document.getElementById('featuredDownload');
+    if (dlBtn) {
+      dlBtn.addEventListener('click', () => {
+        const aiProd = MFR_INFO.duwon.products.find(p => p.k === 'ai');
+        if (aiProd) downloadProductCatalog(aiProd);
+      });
+    }
+  })();
 </script>
 
 </body>
